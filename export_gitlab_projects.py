@@ -17,7 +17,7 @@ with open(CSV_FILE, mode="w", newline='', encoding='utf-8') as file:
     gl = gitlab.Gitlab(GITLAB_URL, private_token=gitlab_pat)
     for group_id in group_ids:
       group = gl.groups.get(group_id)
-      projects = group.projects.list(all=True, include_subgroups=True)
+      projects = group.projects.list(all=True, include_subgroups=True, archived=False)
       for project in projects:
         print(f"Exporting {project.name} in {group.name}")
         writer.writerow([group.name, project.name, project.web_url])
@@ -30,4 +30,3 @@ with open(CSV_FILE, mode="w", newline='', encoding='utf-8') as file:
     print(f"❌ Failed to retrieve group ': {e}")
   except Exception as e:
     print(f"❌ An unexpected error occurred: {e}")
-
