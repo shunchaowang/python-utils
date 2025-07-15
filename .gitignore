@@ -1,4 +1,3 @@
 .idea
 .venv
-export_gitlab_projects.py
-
+gitlab_projects.csv
