@@ -14,8 +14,8 @@ def keep_task_running(minutes):
 
   for i in range(total_iterations):
     print(f"running iteration {i + 1}/{total_iterations}...")
-    pyautogui.moveRel(0, 1, duration=0.1)
-    pyautogui.moveRel(0, -1, duration=0.1)
+    pyautogui.moveRel(0, 1, duration=1)
+    pyautogui.moveRel(0, -1, duration=1)
     time.sleep(running_interval)  # wait for 10 minutes
 
 if __name__ == "__main__":

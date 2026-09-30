@@ -1,3 +1,6 @@
 .idea
 .venv
 gitlab_projects.csv
+bin
+lib
+pyvenv.cfg
